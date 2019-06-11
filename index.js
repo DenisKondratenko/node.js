@@ -1,14 +1,15 @@
+function test() {
+  console.log("Привет урок 2");
+}
+test();
 
-var s=0;
-if (s == 0)
-{
-	console.log("work");
+var printSomething = function() {
+	console.log("Просто текст");
 }
-for(var s=0; s<5; s++)
-{
-	console.log(s);
+printSomething();
+
+function call (func) {
+	func();
 }
-setTimeout(function (){console.log("Привет мир");}, 2000);
-console.log ("s = "+s);
-console.log(__filename);
-console.log(__dirname);
+
+call(printSomething);
