@@ -1,15 +1,2 @@
-function test() {
-  console.log("Привет урок 2");
-}
-test();
-
-var printSomething = function() {
-	console.log("Просто текст");
-}
-printSomething();
-
-function call (func) {
-	func();
-}
-
-call(printSomething);
+counter =require('./array');
+console.log(counter([1, 7, 99, 8, 45, 8]));
