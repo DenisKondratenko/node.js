@@ -1,17 +1,11 @@
-var fs = require('fs');
-//fs.unlinlink('file.txt', function(){console.log("указаный файл удален");}); 
+// server на node.js 
+var http = require('http');
 
-//fs.rmdir('new-one', function() {console.log("указаная папка удалена");}); 
+var server = http.createServer(function(req, res) {
+	console.log("URL страницы: " + req.url);
+	res.writeHead(200, {'Content-Type': 'text/plain; charset=utf-8'});
+	res.end('Привет мир!');
+});
 
-fs.unlink('./new-one/some_new.txt', function() {
-	console.log("указаный файл удален");
-	fs.rmdir('new-one', function() {
-		console.log("указаная папка удалена");
-	})
-}); 
-
-//fs.mkdir('new-one', function() {
-//	fs.writeFile('./new-one/some_new.txt', 'Привет мир!', function() {
-//		console.log("Все сраблтало!");
-//	});
-//});
+server.listen(3000, '127.0.0.1');
+console.log ("Мы отслеживаем порт 3000");
